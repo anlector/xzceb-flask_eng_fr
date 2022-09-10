@@ -18,10 +18,16 @@ def english_to_french(english_text): #write the code here
     french_text = language_translator.translate(
     text = english_text,
     model_id = 'en-fr').get_result()
-    return french_text
+    res_one = french_text["translations"]
+    res_two = res_one[0]
+    res_fin = res_two["translation"]
+    return res_fin
 
 def french_to_english(french_text): #write the code here
     english_text = language_translator.translate(
     text = french_text,
     model_id = 'fr-en').get_result()
-    return english_text
+    res_one = english_text["translations"]
+    res_two = res_one[0]
+    res_fin = res_two["translation"]
+    return res_fin
